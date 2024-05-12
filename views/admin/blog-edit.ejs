@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Blog Post</title>
+    <link rel="stylesheet" href="/stylesheets/editblog.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Edit Blog Post</h2>
+        <form id="editForm" method="post" action="/admin/blog/edit/<%= blog._id %>">
+            <div>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" value="<%= blog.title %>">
+            </div>
+            <div>
+                <label for="description">Description</label>
+                <input type="text" id="description" name="description" value="<%= blog.description %>">
+            </div>
+            <div>
+                <label for="content">Content</label>
+                <textarea id="content" name="content" rows="8">
+                    <%= blog.content %>
+                </textarea>
+            </div>
+            <button type="submit" id="updateButton">Update</button>
+            <a href="/admin/pages-blank">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
