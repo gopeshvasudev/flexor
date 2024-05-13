@@ -9,8 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 databaseConnection();
 app.set("view engine", "ejs");
-app.set('views', '/var/task/views')
-// app.set("views", "D:\\projects\\vs code projects\\websites\\flexor\\views");
+app.set("views", path.join(path.dirname(import.meta.url), "views"));
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
