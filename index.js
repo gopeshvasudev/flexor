@@ -2,13 +2,14 @@ import { config } from "dotenv";
 import express from "express";
 import path from "path";
 import databaseConnection from "./database/connection.js";
+import ejs from "ejs";
 
 config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 databaseConnection();
 app.set("view engine", "ejs");
-app.set("views", path.join(`${path.dirname(import.meta.url)}/views`));
+app.set("views", "D:\\projects\\vs code projects\\websites\\flexor\\views");
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
